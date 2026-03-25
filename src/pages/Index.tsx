@@ -1,19 +1,21 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const CANDLE_IMG = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/files/179139aa-79a7-4827-8e25-b1f4f68fb03e.jpg";
-const DIFFUSER_IMG = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/files/0a8a42ef-1cdc-4987-b148-1b4b152ade48.jpg";
-const COLLECTION_IMG = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/files/2c8f0d30-2522-4467-ac1a-8d4908cb3fa5.jpg";
+const CANDLE_KHOKHLOMA_1 = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/bucket/18cbdc0a-87d6-4281-acec-43c52b2b313d.png";
+const CANDLE_COZY = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/bucket/96b1a20a-3a22-49fa-8869-c58dab49e10a.jpg";
+const CANDLE_GOBLET_WHITE = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/bucket/c4db0827-3e80-4651-8ef6-540fda42d062.jpg";
+const CANDLE_GOBLET_PINK = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/bucket/26ce4dc1-ea90-4aff-8fcf-d88367b39bdf.jpg";
+const CANDLE_GOBLET_RED = "https://cdn.poehali.dev/projects/1cda9010-eaba-44d0-8a98-bf8f1bf549bd/bucket/55c33085-1b3d-46f0-ae65-1777963620be.jpg";
 
-const NAV_ITEMS = ["Главная", "Каталог", "Свечи", "Аромадиффузоры", "О компании", "Контакты"];
+const NAV_ITEMS = ["Главная", "Каталог", "Свечи", "О компании", "Контакты"];
 
 const PRODUCTS = [
-  { id: 1, name: "Ночная Роза", type: "candle", scent: "цветочный", season: "осень", price: 2490, composition: "соевый воск", img: CANDLE_IMG, tag: "Хит" },
-  { id: 2, name: "Янтарный лес", type: "candle", scent: "древесный", season: "зима", price: 2890, composition: "пчелиный воск", img: CANDLE_IMG, tag: "Новинка" },
-  { id: 3, name: "Blanc Absolu", type: "diffuser", scent: "мускусный", season: "весна", price: 3490, composition: "спирт+эфир", img: DIFFUSER_IMG, tag: "" },
-  { id: 4, name: "Дым и Кожа", type: "diffuser", scent: "восточный", season: "осень", price: 3990, composition: "спирт+эфир", img: DIFFUSER_IMG, tag: "Лимитед" },
-  { id: 5, name: "Ветер Лета", type: "candle", scent: "цитрусовый", season: "лето", price: 1990, composition: "соевый воск", img: CANDLE_IMG, tag: "" },
-  { id: 6, name: "Шафран Востока", type: "diffuser", scent: "восточный", season: "зима", price: 4290, composition: "спирт+эфир", img: DIFFUSER_IMG, tag: "Хит" },
+  { id: 1, name: "Хохлома. Роза", type: "candle", scent: "цветочный", season: "осень", price: 2490, composition: "соевый воск", img: CANDLE_KHOKHLOMA_1, tag: "Хит" },
+  { id: 2, name: "Дом, где живёт любовь", type: "candle", scent: "древесный", season: "зима", price: 2890, composition: "соевый воск", img: CANDLE_COZY, tag: "Новинка" },
+  { id: 3, name: "Blanc — белая", type: "candle", scent: "мускусный", season: "весна", price: 3490, composition: "соевый воск", img: CANDLE_GOBLET_WHITE, tag: "" },
+  { id: 4, name: "Лаванда & лён", type: "candle", scent: "цветочный", season: "весна", price: 3990, composition: "пчелиный воск", img: CANDLE_GOBLET_PINK, tag: "Лимитед" },
+  { id: 5, name: "Красная страсть", type: "candle", scent: "восточный", season: "зима", price: 3290, composition: "соевый воск", img: CANDLE_GOBLET_RED, tag: "Хит" },
+  { id: 6, name: "Хохлома. Золото", type: "candle", scent: "восточный", season: "осень", price: 2690, composition: "пчелиный воск", img: CANDLE_KHOKHLOMA_1, tag: "" },
 ];
 
 const SCENTS = ["Все", "цветочный", "древесный", "мускусный", "восточный", "цитрусовый"];
@@ -81,7 +83,7 @@ const Index = () => {
           style={{ color: "var(--gold)" }}
           onClick={() => setActivePage("Главная")}
         >
-          LUMIÈRE
+          МАМА ДРИМ
         </div>
 
         <div className="hidden md:flex items-center gap-8">
@@ -134,7 +136,7 @@ const Index = () => {
           <section className="relative min-h-screen flex items-center overflow-hidden">
             <div
               className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${COLLECTION_IMG})`, filter: "brightness(0.2) saturate(0.7)" }}
+              style={{ backgroundImage: `url(${CANDLE_KHOKHLOMA_1})`, filter: "brightness(0.2) saturate(0.7)" }}
             />
             <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, rgba(13,13,13,0.97) 40%, rgba(13,13,13,0.4) 100%)" }} />
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-px h-64 opacity-40" style={{ background: "linear-gradient(to bottom, transparent, var(--gold), transparent)" }} />
@@ -143,7 +145,7 @@ const Index = () => {
               <div className="animate-fade-in-up stagger-1 flex items-center gap-3 mb-8">
                 <div className="w-10 h-px" style={{ background: "var(--gold)" }} />
                 <span className="font-body text-xs tracking-[0.5em] uppercase" style={{ color: "var(--gold)" }}>
-                  Эксклюзивно для Золотого Яблока
+                  Крафтовая косметика · МАМА ДРИМ
                 </span>
               </div>
 
@@ -151,11 +153,11 @@ const Index = () => {
                 className="animate-fade-in-up stagger-2 font-display font-light leading-none mb-8"
                 style={{ fontSize: "clamp(3.5rem, 9vw, 8rem)", letterSpacing: "-0.02em", lineHeight: 0.95 }}
               >
-                Аромат
+                Свечи
                 <br />
-                как{" "}
+                с{" "}
                 <em className="italic" style={{ color: "var(--gold)" }}>
-                  искусство
+                  душой
                 </em>
               </h1>
 
@@ -163,7 +165,7 @@ const Index = () => {
                 className="animate-fade-in-up stagger-3 font-body font-light text-base md:text-lg mb-12 max-w-lg"
                 style={{ color: "var(--text-muted)", lineHeight: "1.9" }}
               >
-                Премиальные свечи и аромадиффузоры. Натуральный состав, уникальные ароматы, безупречная эстетика — для самых взыскательных покупателей.
+                Крафтовые свечи ручной работы из натурального воска. Авторские ароматы, хохломская роспись, тепло и забота — в каждой свече МАМА ДРИМ.
               </p>
 
               <div className="animate-fade-in-up stagger-4 flex flex-col sm:flex-row gap-4">
@@ -186,9 +188,9 @@ const Index = () => {
 
             <div className="absolute bottom-10 left-6 md:left-16 flex gap-12 animate-fade-in-up stagger-5">
               {[
-                { val: "24+", label: "Аромата" },
-                { val: "8 лет", label: "На рынке" },
-                { val: "100%", label: "Натурально" },
+                { val: "30+", label: "Ароматов" },
+                { val: "100%", label: "Натуральный воск" },
+                { val: "Ручная", label: "Работа" },
               ].map((s) => (
                 <div key={s.label}>
                   <div className="font-display text-3xl font-light" style={{ color: "var(--gold)" }}>{s.val}</div>
@@ -213,7 +215,7 @@ const Index = () => {
               <div className="grid md:grid-cols-3 gap-5">
                 {[
                   { icon: "TrendingUp", val: "+34%", label: "Рост рынка ароматов в России за 2 года", color: "var(--gold)" },
-                  { icon: "Users", val: "18–45", label: "Основная аудитория — активные покупатели Золотого Яблока", color: "var(--crimson)" },
+                  { icon: "Users", val: "18–45", label: "Основная аудитория — женщины, ценящие натуральные продукты и уют дома", color: "var(--crimson)" },
                   { icon: "Award", val: "Топ-5", label: "Категория товаров для дома растёт быстрее косметики", color: "var(--gold)" },
                 ].map((item) => (
                   <div
@@ -296,7 +298,7 @@ const Index = () => {
               <h2 className="font-display text-5xl font-light mb-12">Продукция в интерьере</h2>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {[CANDLE_IMG, DIFFUSER_IMG, COLLECTION_IMG, DIFFUSER_IMG, CANDLE_IMG, COLLECTION_IMG].map((img, i) => (
+                {[CANDLE_KHOKHLOMA_1, CANDLE_COZY, CANDLE_GOBLET_WHITE, CANDLE_GOBLET_PINK, CANDLE_GOBLET_RED, CANDLE_KHOKHLOMA_1].map((img, i) => (
                   <div key={i} className="relative overflow-hidden group" style={{ height: i === 0 || i === 5 ? 320 : 220 }}>
                     <img src={img} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-108" />
                     <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "rgba(200,168,75,0.12)" }} />
@@ -318,7 +320,7 @@ const Index = () => {
                 <em className="italic" style={{ color: "var(--gold)" }}>сотрудничеству?</em>
               </h2>
               <p className="font-body font-light mb-10 max-w-md mx-auto" style={{ color: "var(--text-muted)", lineHeight: 1.8 }}>
-                Узнайте об условиях поставки, маркетинговой поддержке и эксклюзивных условиях для Золотого Яблока.
+                Свяжитесь с нами, чтобы узнать об условиях заказа, составе свечей и специальных предложениях.
               </p>
               <button
                 onClick={() => setActivePage("Контакты")}
@@ -518,7 +520,7 @@ const Index = () => {
                 <em className="italic" style={{ color: "var(--gold)" }}>атмосферу</em>
               </h2>
               <p className="font-body font-light text-lg max-w-2xl leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                LUMIÈRE — российский бренд премиальных ароматов для дома. Мы сочетаем природные ингредиенты высшего качества с современным дизайном, создавая продукты, которые превращают пространство в искусство.
+                МАМА ДРИМ — российский бренд крафтовой косметики и свечей ручной работы. Мы соединяем народные традиции хохломской росписи с натуральными компонентами, создавая уникальные продукты с теплом и заботой.
               </p>
             </div>
           </div>
@@ -527,7 +529,7 @@ const Index = () => {
           <div className="px-6 md:px-16 mb-20">
             <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-4">
               <div className="relative overflow-hidden group" style={{ height: 480 }}>
-                <img src={CANDLE_IMG} alt="Свечи" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={CANDLE_COZY} alt="Свечи" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(13,13,13,0.85) 0%, transparent 55%)" }} />
                 <div className="absolute bottom-8 left-8 right-8">
                   <h3 className="font-display text-4xl font-light mb-2">Свечи</h3>
@@ -535,11 +537,11 @@ const Index = () => {
                 </div>
               </div>
               <div className="relative overflow-hidden group" style={{ height: 480 }}>
-                <img src={DIFFUSER_IMG} alt="Диффузоры" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <img src={CANDLE_KHOKHLOMA_1} alt="Хохлома" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(13,13,13,0.85) 0%, transparent 55%)" }} />
                 <div className="absolute bottom-8 left-8 right-8">
-                  <h3 className="font-display text-4xl font-light mb-2">Аромадиффузоры</h3>
-                  <p className="font-body text-sm font-light" style={{ color: "var(--text-muted)" }}>Спиртовая основа · Ротанговые палочки · До 90 дней аромата</p>
+                  <h3 className="font-display text-4xl font-light mb-2">Хохлома</h3>
+                  <p className="font-body text-sm font-light" style={{ color: "var(--text-muted)" }}>Народные мотивы · Авторская роспись · Лимитированные серии</p>
                 </div>
               </div>
             </div>
@@ -559,7 +561,7 @@ const Index = () => {
                 {[
                   { title: "Растущий рынок", text: "Сегмент ароматов для дома показывает устойчивый рост 25–34% ежегодно, опережая смежные категории." },
                   { title: "Лояльная аудитория", text: "Покупатели ароматов — наиболее лояльный сегмент, с повторными покупками каждые 60–90 дней." },
-                  { title: "Синергия с Золотым Яблоком", text: "Целевая аудитория бренда совпадает с покупателями Золотого Яблока более чем на 70%." },
+                  { title: "Уникальный продукт", text: "Хохломские мотивы на свечах — авторское решение МАМА ДРИМ, которого нет у конкурентов." },
                   { title: "Потенциал ROI", text: "Маржинальность выше среднего по категории на 35–40%. Быстрая окупаемость полочного пространства." },
                 ].map((item) => (
                   <div key={item.title} className="p-8 card-hover" style={{ border: "1px solid rgba(200,168,75,0.15)", background: "var(--card-bg)" }}>
@@ -582,8 +584,8 @@ const Index = () => {
                 <span className="font-body text-xs tracking-[0.4em] uppercase" style={{ color: "var(--gold)" }}>Позиционирование & ROI</span>
               </div>
               <h3 className="font-display text-4xl md:text-5xl font-light mb-12">
-                Преимущества для<br />
-                <em className="italic" style={{ color: "var(--gold)" }}>Золотого Яблока</em>
+                Почему выбирают<br />
+                <em className="italic" style={{ color: "var(--gold)" }}>МАМА ДРИМ</em>
               </h3>
 
               <div className="grid md:grid-cols-3 gap-5">
@@ -623,9 +625,9 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-16 mb-24">
               <div className="space-y-8">
                 {[
-                  { icon: "MapPin", label: "Адрес", val: "Москва, ул. Садовническая, 14" },
-                  { icon: "Phone", label: "Телефон", val: "+7 (495) 123-45-67" },
-                  { icon: "Mail", label: "Email", val: "b2b@lumiere-aroma.ru" },
+                  { icon: "MapPin", label: "Адрес", val: "Москва, Россия" },
+                  { icon: "Phone", label: "Телефон", val: "Укажи свой номер" },
+                  { icon: "Mail", label: "Email", val: "info@mamadrim.ru" },
                   { icon: "Clock", label: "Режим работы", val: "Пн–Пт: 9:00 — 18:00" },
                 ].map((c) => (
                   <div key={c.label} className="flex items-start gap-4">
@@ -751,8 +753,8 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-12 px-6 md:px-16" style={{ borderTop: "1px solid rgba(200,168,75,0.12)" }}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="font-display text-xl tracking-[0.35em]" style={{ color: "var(--gold)" }}>LUMIÈRE</div>
-          <div className="font-body text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>© 2024 · Эксклюзивно для Золотого Яблока</div>
+          <div className="font-display text-xl tracking-[0.25em]" style={{ color: "var(--gold)" }}>МАМА ДРИМ</div>
+          <div className="font-body text-xs tracking-widest" style={{ color: "var(--text-muted)" }}>© 2026 · Крафтовая косметика</div>
           <div className="flex gap-6">
             {["Каталог", "О компании", "Контакты"].map((item) => (
               <button
